@@ -262,6 +262,7 @@ Partial Class frmListPatient
         '
         Me.txtPatientID.Location = New System.Drawing.Point(94, 30)
         Me.txtPatientID.Name = "txtPatientID"
+        Me.txtPatientID.ReadOnly = True
         Me.txtPatientID.Size = New System.Drawing.Size(130, 22)
         Me.txtPatientID.TabIndex = 1
         '

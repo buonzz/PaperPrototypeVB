@@ -84,4 +84,8 @@ Public Class frmListPatient
         txtHeight.Text = ""
         txtDate.Text = ""
     End Sub
+
+    Private Sub btnDone_Click(sender As Object, e As EventArgs) Handles btnDone.Click
+        Me.Close()
+    End Sub
 End Class
