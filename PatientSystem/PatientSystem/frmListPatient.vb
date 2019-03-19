@@ -40,6 +40,7 @@ Public Class frmListPatient
         Using conxn As New SqlConnection(conxnString)
             Using cmd As New SqlCommand(cmdString, conxn)
                 Using sda As New SqlDataAdapter(cmd)
+                    patientTable.Clear()
                     sda.Fill(patientTable)
                     patientTableBindingSource.DataSource = patientTable
                 End Using
@@ -63,14 +64,24 @@ Public Class frmListPatient
 
 
             If result = 1 Then
-                lblMsg.Text = "Patient [" + txtName.Text + "] has been added!"
+                lblMsg.Text = "Patient " + txtName.Text + " has been added!"
             Else
                 lblMsg.Text = "Could not add patient!"
             End If
-
+            resetForm()
         Catch ex As Exception
             lblMsg.Text = "Error --> " + ex.Message
         End Try
+        PopulatePatientsTable()
+    End Sub
 
+    Private Sub resetForm()
+        txtName.Text = ""
+        txtSex.Text = ""
+        txtBirthday.Text = ""
+        txtAge.Text = ""
+        txtWeight.Text = ""
+        txtHeight.Text = ""
+        txtDate.Text = ""
     End Sub
 End Class
