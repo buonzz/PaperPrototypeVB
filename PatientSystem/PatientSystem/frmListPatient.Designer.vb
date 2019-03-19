@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class frmListPatient
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class frmListPatient
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.btnDelete = New System.Windows.Forms.Button()
@@ -48,16 +48,6 @@ Partial Class frmListPatient
         Me.Label1 = New System.Windows.Forms.Label()
         Me.dgvPatients = New System.Windows.Forms.DataGridView()
         Me.btnDone = New System.Windows.Forms.Button()
-        Me.id = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.mname = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.sex = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.birthday = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.age = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.mheight = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colWeight = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.mdate = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.disease = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.treatment = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dgvPatients, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -291,7 +281,6 @@ Partial Class frmListPatient
         Me.dgvPatients.AllowUserToOrderColumns = True
         Me.dgvPatients.AllowUserToResizeRows = False
         Me.dgvPatients.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvPatients.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.id, Me.mname, Me.sex, Me.birthday, Me.age, Me.mheight, Me.colWeight, Me.mdate, Me.disease, Me.treatment})
         Me.dgvPatients.Location = New System.Drawing.Point(12, 297)
         Me.dgvPatients.Name = "dgvPatients"
         Me.dgvPatients.ReadOnly = True
@@ -307,66 +296,6 @@ Partial Class frmListPatient
         Me.btnDone.TabIndex = 2
         Me.btnDone.Text = "Done"
         Me.btnDone.UseVisualStyleBackColor = True
-        '
-        'id
-        '
-        Me.id.HeaderText = "Patient ID"
-        Me.id.Name = "id"
-        Me.id.ReadOnly = True
-        '
-        'mname
-        '
-        Me.mname.HeaderText = "Name"
-        Me.mname.Name = "mname"
-        Me.mname.ReadOnly = True
-        '
-        'sex
-        '
-        Me.sex.HeaderText = "Sex"
-        Me.sex.Name = "sex"
-        Me.sex.ReadOnly = True
-        '
-        'birthday
-        '
-        Me.birthday.HeaderText = "Birthday"
-        Me.birthday.Name = "birthday"
-        Me.birthday.ReadOnly = True
-        '
-        'age
-        '
-        Me.age.HeaderText = "Age"
-        Me.age.Name = "age"
-        Me.age.ReadOnly = True
-        '
-        'mheight
-        '
-        Me.mheight.HeaderText = "Height"
-        Me.mheight.Name = "mheight"
-        Me.mheight.ReadOnly = True
-        '
-        'colWeight
-        '
-        Me.colWeight.HeaderText = "Weight"
-        Me.colWeight.Name = "colWeight"
-        Me.colWeight.ReadOnly = True
-        '
-        'mdate
-        '
-        Me.mdate.HeaderText = "Date"
-        Me.mdate.Name = "mdate"
-        Me.mdate.ReadOnly = True
-        '
-        'disease
-        '
-        Me.disease.HeaderText = "Disease"
-        Me.disease.Name = "disease"
-        Me.disease.ReadOnly = True
-        '
-        'treatment
-        '
-        Me.treatment.HeaderText = "Treatment"
-        Me.treatment.Name = "treatment"
-        Me.treatment.ReadOnly = True
         '
         'frmListPatient
         '
@@ -412,14 +341,4 @@ Partial Class frmListPatient
     Friend WithEvents Label2 As Label
     Friend WithEvents txtPatientID As TextBox
     Friend WithEvents Label1 As Label
-    Friend WithEvents id As DataGridViewTextBoxColumn
-    Friend WithEvents mname As DataGridViewTextBoxColumn
-    Friend WithEvents sex As DataGridViewTextBoxColumn
-    Friend WithEvents birthday As DataGridViewTextBoxColumn
-    Friend WithEvents age As DataGridViewTextBoxColumn
-    Friend WithEvents mheight As DataGridViewTextBoxColumn
-    Friend WithEvents colWeight As DataGridViewTextBoxColumn
-    Friend WithEvents mdate As DataGridViewTextBoxColumn
-    Friend WithEvents disease As DataGridViewTextBoxColumn
-    Friend WithEvents treatment As DataGridViewTextBoxColumn
 End Class
