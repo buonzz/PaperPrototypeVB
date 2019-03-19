@@ -1,3 +1,5 @@
 /PatientSystem/.vs/
 Thumbs.db
 /PatientSystem/PatientSystem/obj/Debug/
+/PatientSystem/PatientSystem/bin/
+/PatientSystem/PatientSystem/obj/Debug/PatientSystem.vbproj.CoreCompileInputs.cache
