@@ -38,7 +38,7 @@ Partial Class frmListPatient
         Me.Label6 = New System.Windows.Forms.Label()
         Me.txtAge = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.txtBirthday = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.txtSex = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -48,6 +48,7 @@ Partial Class frmListPatient
         Me.Label1 = New System.Windows.Forms.Label()
         Me.dgvPatients = New System.Windows.Forms.DataGridView()
         Me.btnDone = New System.Windows.Forms.Button()
+        Me.lblMsg = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dgvPatients, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -69,7 +70,7 @@ Partial Class frmListPatient
         Me.GroupBox1.Controls.Add(Me.Label6)
         Me.GroupBox1.Controls.Add(Me.txtAge)
         Me.GroupBox1.Controls.Add(Me.Label5)
-        Me.GroupBox1.Controls.Add(Me.TextBox1)
+        Me.GroupBox1.Controls.Add(Me.txtBirthday)
         Me.GroupBox1.Controls.Add(Me.Label4)
         Me.GroupBox1.Controls.Add(Me.txtSex)
         Me.GroupBox1.Controls.Add(Me.Label3)
@@ -209,12 +210,12 @@ Partial Class frmListPatient
         Me.Label5.TabIndex = 8
         Me.Label5.Text = "Age"
         '
-        'TextBox1
+        'txtBirthday
         '
-        Me.TextBox1.Location = New System.Drawing.Point(94, 130)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(100, 22)
-        Me.TextBox1.TabIndex = 7
+        Me.txtBirthday.Location = New System.Drawing.Point(94, 130)
+        Me.txtBirthday.Name = "txtBirthday"
+        Me.txtBirthday.Size = New System.Drawing.Size(100, 22)
+        Me.txtBirthday.TabIndex = 7
         '
         'Label4
         '
@@ -297,11 +298,20 @@ Partial Class frmListPatient
         Me.btnDone.Text = "Done"
         Me.btnDone.UseVisualStyleBackColor = True
         '
+        'lblMsg
+        '
+        Me.lblMsg.AutoSize = True
+        Me.lblMsg.Location = New System.Drawing.Point(22, 633)
+        Me.lblMsg.Name = "lblMsg"
+        Me.lblMsg.Size = New System.Drawing.Size(0, 17)
+        Me.lblMsg.TabIndex = 3
+        '
         'frmListPatient
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1065, 675)
+        Me.Controls.Add(Me.lblMsg)
         Me.Controls.Add(Me.btnDone)
         Me.Controls.Add(Me.dgvPatients)
         Me.Controls.Add(Me.GroupBox1)
@@ -312,6 +322,7 @@ Partial Class frmListPatient
         Me.GroupBox1.PerformLayout()
         CType(Me.dgvPatients, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -333,7 +344,7 @@ Partial Class frmListPatient
     Friend WithEvents Label6 As Label
     Friend WithEvents txtAge As TextBox
     Friend WithEvents Label5 As Label
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents txtBirthday As TextBox
     Friend WithEvents Label4 As Label
     Friend WithEvents txtSex As TextBox
     Friend WithEvents Label3 As Label
@@ -341,4 +352,5 @@ Partial Class frmListPatient
     Friend WithEvents Label2 As Label
     Friend WithEvents txtPatientID As TextBox
     Friend WithEvents Label1 As Label
+    Friend WithEvents lblMsg As Label
 End Class
