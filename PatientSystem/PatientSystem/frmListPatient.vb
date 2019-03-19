@@ -9,11 +9,14 @@ Public Class frmListPatient
     Dim patientTable As DataTable = Nothing
     Dim patientTableBindingSource As BindingSource = Nothing
     Dim cn_builder As ConnectionStringBuilder
+    Dim patientRepo As PatientRepository
 
     Private Sub frmListPatient_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         cn_builder = New ConnectionStringBuilder
         patientTable = New DataTable()
         patientTableBindingSource = New BindingSource
+        patientRepo = New PatientRepository
+
         dgvPatients.DataSource = patientTableBindingSource
         PopulatePatientsTable()
     End Sub
@@ -47,22 +50,19 @@ Public Class frmListPatient
 
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
 
-        Dim cn As SqlConnection = New SqlConnection(cn_builder.getConnectionString())
-
         Try
-            cn.Open()
-            Dim cmd As SqlCommand = New SqlCommand("insert into patients(name,sex,birthday,age,weight,height,mdate) values(@name,@sex,@birthday,@age,@weight,@height,@mdate)", cn)
-            cmd.Parameters.AddWithValue("@name", txtName.Text)
-            cmd.Parameters.AddWithValue("@sex", txtSex.Text)
-            cmd.Parameters.AddWithValue("@birthday", txtBirthday.Text)
-            cmd.Parameters.AddWithValue("@age", txtAge.Text)
-            cmd.Parameters.AddWithValue("@weight", txtWeight.Text)
-            cmd.Parameters.AddWithValue("@height", txtHeight.Text)
-            cmd.Parameters.AddWithValue("@mdate", txtDate.Text)
 
-            Dim count = cmd.ExecuteNonQuery()
+            Dim result = patientRepo.add(txtName.Text,
+                        txtSex.Text,
+                        txtBirthday.Text,
+                        Convert.ToInt32(txtAge.Text),
+                        Convert.ToDecimal(txtWeight.Text),
+                        Convert.ToDecimal(txtHeight.Text),
+                        txtDate.Text
+                        )
 
-            If count = 1 Then
+
+            If result = 1 Then
                 lblMsg.Text = "Patient [" + txtName.Text + "] has been added!"
             Else
                 lblMsg.Text = "Could not add patient!"
@@ -70,8 +70,6 @@ Public Class frmListPatient
 
         Catch ex As Exception
             lblMsg.Text = "Error --> " + ex.Message
-        Finally
-            cn.Close()
         End Try
 
     End Sub
