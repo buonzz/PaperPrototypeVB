@@ -73,6 +73,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConnectionStringBuilder.vb" />
     <Compile Include="frmHistory.Designer.vb">
       <DependentUpon>frmHistory.vb</DependentUpon>
     </Compile>
