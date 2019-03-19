@@ -23,33 +23,43 @@ Partial Class frmListPatient
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.btnDone = New System.Windows.Forms.Button()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.txtPatientID = New System.Windows.Forms.TextBox()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.txtName = New System.Windows.Forms.TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.txtSex = New System.Windows.Forms.TextBox()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.txtAge = New System.Windows.Forms.TextBox()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.txtDate = New System.Windows.Forms.TextBox()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.txtHeight = New System.Windows.Forms.TextBox()
-        Me.Weight = New System.Windows.Forms.Label()
-        Me.txtWeight = New System.Windows.Forms.TextBox()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.txtTreatment = New System.Windows.Forms.TextBox()
-        Me.btnAdd = New System.Windows.Forms.Button()
-        Me.btnEdit = New System.Windows.Forms.Button()
         Me.btnDelete = New System.Windows.Forms.Button()
+        Me.btnEdit = New System.Windows.Forms.Button()
+        Me.btnAdd = New System.Windows.Forms.Button()
+        Me.txtTreatment = New System.Windows.Forms.TextBox()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.txtWeight = New System.Windows.Forms.TextBox()
+        Me.Weight = New System.Windows.Forms.Label()
+        Me.txtHeight = New System.Windows.Forms.TextBox()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.txtDate = New System.Windows.Forms.TextBox()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.txtAge = New System.Windows.Forms.TextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.txtSex = New System.Windows.Forms.TextBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.txtName = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.txtPatientID = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.dgvPatients = New System.Windows.Forms.DataGridView()
+        Me.btnDone = New System.Windows.Forms.Button()
+        Me.id = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.mname = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.sex = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.birthday = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.age = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.mheight = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colWeight = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.mdate = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.disease = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.treatment = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox1.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvPatients, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupBox1
@@ -79,112 +89,110 @@ Partial Class frmListPatient
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(889, 274)
+        Me.GroupBox1.Size = New System.Drawing.Size(1041, 274)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Patient Form"
         '
-        'DataGridView1
+        'btnDelete
         '
-        Me.DataGridView1.AllowUserToAddRows = False
-        Me.DataGridView1.AllowUserToDeleteRows = False
-        Me.DataGridView1.AllowUserToOrderColumns = True
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(12, 305)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.ReadOnly = True
-        Me.DataGridView1.RowTemplate.Height = 24
-        Me.DataGridView1.Size = New System.Drawing.Size(889, 319)
-        Me.DataGridView1.TabIndex = 1
+        Me.btnDelete.Location = New System.Drawing.Point(887, 137)
+        Me.btnDelete.Name = "btnDelete"
+        Me.btnDelete.Size = New System.Drawing.Size(137, 39)
+        Me.btnDelete.TabIndex = 22
+        Me.btnDelete.Text = "Delete"
+        Me.btnDelete.UseVisualStyleBackColor = True
         '
-        'btnDone
+        'btnEdit
         '
-        Me.btnDone.Location = New System.Drawing.Point(751, 630)
-        Me.btnDone.Name = "btnDone"
-        Me.btnDone.Size = New System.Drawing.Size(150, 33)
-        Me.btnDone.TabIndex = 2
-        Me.btnDone.Text = "Done"
-        Me.btnDone.UseVisualStyleBackColor = True
+        Me.btnEdit.Location = New System.Drawing.Point(887, 83)
+        Me.btnEdit.Name = "btnEdit"
+        Me.btnEdit.Size = New System.Drawing.Size(137, 39)
+        Me.btnEdit.TabIndex = 21
+        Me.btnEdit.Text = "Edit"
+        Me.btnEdit.UseVisualStyleBackColor = True
         '
-        'Label1
+        'btnAdd
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(19, 35)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(69, 17)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Patient ID"
+        Me.btnAdd.Location = New System.Drawing.Point(887, 28)
+        Me.btnAdd.Name = "btnAdd"
+        Me.btnAdd.Size = New System.Drawing.Size(137, 39)
+        Me.btnAdd.TabIndex = 20
+        Me.btnAdd.Text = "Add"
+        Me.btnAdd.UseVisualStyleBackColor = True
         '
-        'txtPatientID
+        'txtTreatment
         '
-        Me.txtPatientID.Location = New System.Drawing.Point(94, 30)
-        Me.txtPatientID.Name = "txtPatientID"
-        Me.txtPatientID.Size = New System.Drawing.Size(130, 22)
-        Me.txtPatientID.TabIndex = 1
+        Me.txtTreatment.Location = New System.Drawing.Point(566, 177)
+        Me.txtTreatment.Multiline = True
+        Me.txtTreatment.Name = "txtTreatment"
+        Me.txtTreatment.Size = New System.Drawing.Size(221, 68)
+        Me.txtTreatment.TabIndex = 19
         '
-        'Label2
+        'Label9
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(37, 66)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(45, 17)
-        Me.Label2.TabIndex = 2
-        Me.Label2.Text = "Name"
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(491, 188)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(73, 17)
+        Me.Label9.TabIndex = 18
+        Me.Label9.Text = "Treatment"
         '
-        'txtName
+        'TextBox2
         '
-        Me.txtName.Location = New System.Drawing.Point(94, 63)
-        Me.txtName.Name = "txtName"
-        Me.txtName.Size = New System.Drawing.Size(130, 22)
-        Me.txtName.TabIndex = 3
+        Me.TextBox2.Location = New System.Drawing.Point(566, 86)
+        Me.TextBox2.Multiline = True
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.Size = New System.Drawing.Size(221, 68)
+        Me.TextBox2.TabIndex = 17
         '
-        'Label3
+        'Label8
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(51, 101)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(31, 17)
-        Me.Label3.TabIndex = 4
-        Me.Label3.Text = "Sex"
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(491, 88)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(59, 17)
+        Me.Label8.TabIndex = 16
+        Me.Label8.Text = "Disease"
         '
-        'txtSex
+        'txtWeight
         '
-        Me.txtSex.Location = New System.Drawing.Point(94, 99)
-        Me.txtSex.Name = "txtSex"
-        Me.txtSex.Size = New System.Drawing.Size(100, 22)
-        Me.txtSex.TabIndex = 5
+        Me.txtWeight.Location = New System.Drawing.Point(567, 50)
+        Me.txtWeight.Name = "txtWeight"
+        Me.txtWeight.Size = New System.Drawing.Size(100, 22)
+        Me.txtWeight.TabIndex = 15
         '
-        'Label4
+        'Weight
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(28, 130)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(60, 17)
-        Me.Label4.TabIndex = 6
-        Me.Label4.Text = "Birthday"
+        Me.Weight.AutoSize = True
+        Me.Weight.Location = New System.Drawing.Point(491, 52)
+        Me.Weight.Name = "Weight"
+        Me.Weight.Size = New System.Drawing.Size(52, 17)
+        Me.Weight.TabIndex = 14
+        Me.Weight.Text = "Weight"
         '
-        'TextBox1
+        'txtHeight
         '
-        Me.TextBox1.Location = New System.Drawing.Point(94, 130)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(100, 22)
-        Me.TextBox1.TabIndex = 7
+        Me.txtHeight.Location = New System.Drawing.Point(567, 21)
+        Me.txtHeight.Name = "txtHeight"
+        Me.txtHeight.Size = New System.Drawing.Size(100, 22)
+        Me.txtHeight.TabIndex = 13
         '
-        'Label5
+        'Label7
         '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(49, 161)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(33, 17)
-        Me.Label5.TabIndex = 8
-        Me.Label5.Text = "Age"
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(494, 25)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(49, 17)
+        Me.Label7.TabIndex = 12
+        Me.Label7.Text = "Height"
         '
-        'txtAge
+        'txtDate
         '
-        Me.txtAge.Location = New System.Drawing.Point(94, 159)
-        Me.txtAge.Name = "txtAge"
-        Me.txtAge.Size = New System.Drawing.Size(100, 22)
-        Me.txtAge.TabIndex = 9
+        Me.txtDate.Location = New System.Drawing.Point(94, 193)
+        Me.txtDate.Name = "txtDate"
+        Me.txtDate.Size = New System.Drawing.Size(100, 22)
+        Me.txtDate.TabIndex = 11
         '
         'Label6
         '
@@ -195,125 +203,191 @@ Partial Class frmListPatient
         Me.Label6.TabIndex = 10
         Me.Label6.Text = "Date"
         '
-        'txtDate
+        'txtAge
         '
-        Me.txtDate.Location = New System.Drawing.Point(94, 193)
-        Me.txtDate.Name = "txtDate"
-        Me.txtDate.Size = New System.Drawing.Size(100, 22)
-        Me.txtDate.TabIndex = 11
+        Me.txtAge.Location = New System.Drawing.Point(94, 159)
+        Me.txtAge.Name = "txtAge"
+        Me.txtAge.Size = New System.Drawing.Size(100, 22)
+        Me.txtAge.TabIndex = 9
         '
-        'Label7
+        'Label5
         '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(384, 30)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(49, 17)
-        Me.Label7.TabIndex = 12
-        Me.Label7.Text = "Height"
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(49, 161)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(33, 17)
+        Me.Label5.TabIndex = 8
+        Me.Label5.Text = "Age"
         '
-        'txtHeight
+        'TextBox1
         '
-        Me.txtHeight.Location = New System.Drawing.Point(457, 26)
-        Me.txtHeight.Name = "txtHeight"
-        Me.txtHeight.Size = New System.Drawing.Size(100, 22)
-        Me.txtHeight.TabIndex = 13
+        Me.TextBox1.Location = New System.Drawing.Point(94, 130)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(100, 22)
+        Me.TextBox1.TabIndex = 7
         '
-        'Weight
+        'Label4
         '
-        Me.Weight.AutoSize = True
-        Me.Weight.Location = New System.Drawing.Point(381, 57)
-        Me.Weight.Name = "Weight"
-        Me.Weight.Size = New System.Drawing.Size(52, 17)
-        Me.Weight.TabIndex = 14
-        Me.Weight.Text = "Weight"
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(28, 130)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(60, 17)
+        Me.Label4.TabIndex = 6
+        Me.Label4.Text = "Birthday"
         '
-        'txtWeight
+        'txtSex
         '
-        Me.txtWeight.Location = New System.Drawing.Point(457, 55)
-        Me.txtWeight.Name = "txtWeight"
-        Me.txtWeight.Size = New System.Drawing.Size(100, 22)
-        Me.txtWeight.TabIndex = 15
+        Me.txtSex.Location = New System.Drawing.Point(94, 99)
+        Me.txtSex.Name = "txtSex"
+        Me.txtSex.Size = New System.Drawing.Size(100, 22)
+        Me.txtSex.TabIndex = 5
         '
-        'Label8
+        'Label3
         '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(381, 93)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(59, 17)
-        Me.Label8.TabIndex = 16
-        Me.Label8.Text = "Disease"
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(51, 101)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(31, 17)
+        Me.Label3.TabIndex = 4
+        Me.Label3.Text = "Sex"
         '
-        'TextBox2
+        'txtName
         '
-        Me.TextBox2.Location = New System.Drawing.Point(456, 91)
-        Me.TextBox2.Multiline = True
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(221, 68)
-        Me.TextBox2.TabIndex = 17
+        Me.txtName.Location = New System.Drawing.Point(94, 63)
+        Me.txtName.Name = "txtName"
+        Me.txtName.Size = New System.Drawing.Size(335, 22)
+        Me.txtName.TabIndex = 3
         '
-        'Label9
+        'Label2
         '
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(381, 193)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(73, 17)
-        Me.Label9.TabIndex = 18
-        Me.Label9.Text = "Treatment"
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(37, 66)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(45, 17)
+        Me.Label2.TabIndex = 2
+        Me.Label2.Text = "Name"
         '
-        'txtTreatment
+        'txtPatientID
         '
-        Me.txtTreatment.Location = New System.Drawing.Point(456, 182)
-        Me.txtTreatment.Multiline = True
-        Me.txtTreatment.Name = "txtTreatment"
-        Me.txtTreatment.Size = New System.Drawing.Size(221, 68)
-        Me.txtTreatment.TabIndex = 19
+        Me.txtPatientID.Location = New System.Drawing.Point(94, 30)
+        Me.txtPatientID.Name = "txtPatientID"
+        Me.txtPatientID.Size = New System.Drawing.Size(130, 22)
+        Me.txtPatientID.TabIndex = 1
         '
-        'btnAdd
+        'Label1
         '
-        Me.btnAdd.Location = New System.Drawing.Point(727, 35)
-        Me.btnAdd.Name = "btnAdd"
-        Me.btnAdd.Size = New System.Drawing.Size(137, 39)
-        Me.btnAdd.TabIndex = 20
-        Me.btnAdd.Text = "Add"
-        Me.btnAdd.UseVisualStyleBackColor = True
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(19, 35)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(69, 17)
+        Me.Label1.TabIndex = 0
+        Me.Label1.Text = "Patient ID"
         '
-        'btnEdit
+        'dgvPatients
         '
-        Me.btnEdit.Location = New System.Drawing.Point(727, 90)
-        Me.btnEdit.Name = "btnEdit"
-        Me.btnEdit.Size = New System.Drawing.Size(137, 39)
-        Me.btnEdit.TabIndex = 21
-        Me.btnEdit.Text = "Edit"
-        Me.btnEdit.UseVisualStyleBackColor = True
+        Me.dgvPatients.AllowDrop = True
+        Me.dgvPatients.AllowUserToAddRows = False
+        Me.dgvPatients.AllowUserToDeleteRows = False
+        Me.dgvPatients.AllowUserToOrderColumns = True
+        Me.dgvPatients.AllowUserToResizeRows = False
+        Me.dgvPatients.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvPatients.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.id, Me.mname, Me.sex, Me.birthday, Me.age, Me.mheight, Me.colWeight, Me.mdate, Me.disease, Me.treatment})
+        Me.dgvPatients.Location = New System.Drawing.Point(12, 297)
+        Me.dgvPatients.Name = "dgvPatients"
+        Me.dgvPatients.ReadOnly = True
+        Me.dgvPatients.RowTemplate.Height = 24
+        Me.dgvPatients.Size = New System.Drawing.Size(1046, 319)
+        Me.dgvPatients.TabIndex = 1
         '
-        'btnDelete
+        'btnDone
         '
-        Me.btnDelete.Location = New System.Drawing.Point(727, 144)
-        Me.btnDelete.Name = "btnDelete"
-        Me.btnDelete.Size = New System.Drawing.Size(137, 39)
-        Me.btnDelete.TabIndex = 22
-        Me.btnDelete.Text = "Delete"
-        Me.btnDelete.UseVisualStyleBackColor = True
+        Me.btnDone.Location = New System.Drawing.Point(908, 630)
+        Me.btnDone.Name = "btnDone"
+        Me.btnDone.Size = New System.Drawing.Size(150, 33)
+        Me.btnDone.TabIndex = 2
+        Me.btnDone.Text = "Done"
+        Me.btnDone.UseVisualStyleBackColor = True
+        '
+        'id
+        '
+        Me.id.HeaderText = "Patient ID"
+        Me.id.Name = "id"
+        Me.id.ReadOnly = True
+        '
+        'mname
+        '
+        Me.mname.HeaderText = "Name"
+        Me.mname.Name = "mname"
+        Me.mname.ReadOnly = True
+        '
+        'sex
+        '
+        Me.sex.HeaderText = "Sex"
+        Me.sex.Name = "sex"
+        Me.sex.ReadOnly = True
+        '
+        'birthday
+        '
+        Me.birthday.HeaderText = "Birthday"
+        Me.birthday.Name = "birthday"
+        Me.birthday.ReadOnly = True
+        '
+        'age
+        '
+        Me.age.HeaderText = "Age"
+        Me.age.Name = "age"
+        Me.age.ReadOnly = True
+        '
+        'mheight
+        '
+        Me.mheight.HeaderText = "Height"
+        Me.mheight.Name = "mheight"
+        Me.mheight.ReadOnly = True
+        '
+        'colWeight
+        '
+        Me.colWeight.HeaderText = "Weight"
+        Me.colWeight.Name = "colWeight"
+        Me.colWeight.ReadOnly = True
+        '
+        'mdate
+        '
+        Me.mdate.HeaderText = "Date"
+        Me.mdate.Name = "mdate"
+        Me.mdate.ReadOnly = True
+        '
+        'disease
+        '
+        Me.disease.HeaderText = "Disease"
+        Me.disease.Name = "disease"
+        Me.disease.ReadOnly = True
+        '
+        'treatment
+        '
+        Me.treatment.HeaderText = "Treatment"
+        Me.treatment.Name = "treatment"
+        Me.treatment.ReadOnly = True
         '
         'frmListPatient
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(913, 675)
+        Me.ClientSize = New System.Drawing.Size(1065, 675)
         Me.Controls.Add(Me.btnDone)
-        Me.Controls.Add(Me.DataGridView1)
+        Me.Controls.Add(Me.dgvPatients)
         Me.Controls.Add(Me.GroupBox1)
         Me.Name = "frmListPatient"
+        Me.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide
         Me.Text = "Manage Patients"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvPatients, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
 
     Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents dgvPatients As DataGridView
     Friend WithEvents btnDone As Button
     Friend WithEvents btnDelete As Button
     Friend WithEvents btnEdit As Button
@@ -338,4 +412,14 @@ Partial Class frmListPatient
     Friend WithEvents Label2 As Label
     Friend WithEvents txtPatientID As TextBox
     Friend WithEvents Label1 As Label
+    Friend WithEvents id As DataGridViewTextBoxColumn
+    Friend WithEvents mname As DataGridViewTextBoxColumn
+    Friend WithEvents sex As DataGridViewTextBoxColumn
+    Friend WithEvents birthday As DataGridViewTextBoxColumn
+    Friend WithEvents age As DataGridViewTextBoxColumn
+    Friend WithEvents mheight As DataGridViewTextBoxColumn
+    Friend WithEvents colWeight As DataGridViewTextBoxColumn
+    Friend WithEvents mdate As DataGridViewTextBoxColumn
+    Friend WithEvents disease As DataGridViewTextBoxColumn
+    Friend WithEvents treatment As DataGridViewTextBoxColumn
 End Class
