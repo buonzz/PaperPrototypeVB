@@ -91,6 +91,12 @@
     <Compile Include="frmListPatient.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmManageCheckup.Designer.vb">
+      <DependentUpon>frmManageCheckup.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmManageCheckup.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmMenu.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -123,6 +129,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmManageCheckup.resx">
+      <DependentUpon>frmManageCheckup.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMenu.resx">
       <DependentUpon>frmMenu.vb</DependentUpon>
