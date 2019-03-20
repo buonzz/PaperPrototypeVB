@@ -88,4 +88,24 @@ Public Class frmListPatient
     Private Sub btnDone_Click(sender As Object, e As EventArgs) Handles btnDone.Click
         Me.Close()
     End Sub
+
+    Private Sub btnEdit_Click(sender As Object, e As EventArgs) Handles btnEdit.Click
+
+    End Sub
+
+    Private Sub dgvPatients_SelectionChanged(sender As Object, e As EventArgs) Handles dgvPatients.SelectionChanged
+        If dgvPatients.SelectedRows.Count > 0 Then
+            Dim curIndex As Integer = dgvPatients.CurrentRow.Index
+
+            txtName.Text = dgvPatients.Rows(curIndex).Cells(1).Value.ToString()
+            txtSex.Text = dgvPatients.Rows(curIndex).Cells(2).Value.ToString()
+            txtBirthday.Text = dgvPatients.Rows(curIndex).Cells(3).Value.ToString()
+            txtAge.Text = dgvPatients.Rows(curIndex).Cells(4).Value.ToString()
+            txtWeight.Text = dgvPatients.Rows(curIndex).Cells(5).Value.ToString()
+            txtHeight.Text = dgvPatients.Rows(curIndex).Cells(6).Value.ToString()
+            txtDate.Text = dgvPatients.Rows(curIndex).Cells(7).Value.ToString()
+
+
+        End If
+    End Sub
 End Class
