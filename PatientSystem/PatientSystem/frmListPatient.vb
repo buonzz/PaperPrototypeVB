@@ -10,12 +10,15 @@ Public Class frmListPatient
     Dim patientTableBindingSource As BindingSource = Nothing
     Dim cn_builder As ConnectionStringBuilder
     Dim patientRepo As PatientRepository
+    Dim ScreenMode As String = "Add"
 
     Private Sub frmListPatient_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         cn_builder = New ConnectionStringBuilder
         patientTable = New DataTable()
         patientTableBindingSource = New BindingSource
         patientRepo = New PatientRepository
+        btnEdit.Enabled = False
+        btnDelete.Enabled = False
 
         dgvPatients.DataSource = patientTableBindingSource
         PopulatePatientsTable()
@@ -83,6 +86,8 @@ Public Class frmListPatient
         txtWeight.Text = ""
         txtHeight.Text = ""
         txtDate.Text = ""
+        txtTreatment.Text = ""
+        txtDisease.Text = ""
     End Sub
 
     Private Sub btnDone_Click(sender As Object, e As EventArgs) Handles btnDone.Click
@@ -97,6 +102,7 @@ Public Class frmListPatient
         If dgvPatients.SelectedRows.Count > 0 Then
             Dim curIndex As Integer = dgvPatients.CurrentRow.Index
 
+            txtPatientID.Text = dgvPatients.Rows(curIndex).Cells(0).Value.ToString()
             txtName.Text = dgvPatients.Rows(curIndex).Cells(1).Value.ToString()
             txtSex.Text = dgvPatients.Rows(curIndex).Cells(2).Value.ToString()
             txtBirthday.Text = dgvPatients.Rows(curIndex).Cells(3).Value.ToString()
@@ -105,7 +111,9 @@ Public Class frmListPatient
             txtHeight.Text = dgvPatients.Rows(curIndex).Cells(6).Value.ToString()
             txtDate.Text = dgvPatients.Rows(curIndex).Cells(7).Value.ToString()
 
-
+            btnEdit.Enabled = True
+            ScreenMode = "Edit"
         End If
     End Sub
+
 End Class

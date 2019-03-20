@@ -28,7 +28,7 @@ Partial Class frmListPatient
         Me.btnAdd = New System.Windows.Forms.Button()
         Me.txtTreatment = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.txtDisease = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.txtWeight = New System.Windows.Forms.TextBox()
         Me.Weight = New System.Windows.Forms.Label()
@@ -60,7 +60,7 @@ Partial Class frmListPatient
         Me.GroupBox1.Controls.Add(Me.btnAdd)
         Me.GroupBox1.Controls.Add(Me.txtTreatment)
         Me.GroupBox1.Controls.Add(Me.Label9)
-        Me.GroupBox1.Controls.Add(Me.TextBox2)
+        Me.GroupBox1.Controls.Add(Me.txtDisease)
         Me.GroupBox1.Controls.Add(Me.Label8)
         Me.GroupBox1.Controls.Add(Me.txtWeight)
         Me.GroupBox1.Controls.Add(Me.Weight)
@@ -129,13 +129,13 @@ Partial Class frmListPatient
         Me.Label9.TabIndex = 18
         Me.Label9.Text = "Treatment"
         '
-        'TextBox2
+        'txtDisease
         '
-        Me.TextBox2.Location = New System.Drawing.Point(566, 86)
-        Me.TextBox2.Multiline = True
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(221, 68)
-        Me.TextBox2.TabIndex = 17
+        Me.txtDisease.Location = New System.Drawing.Point(566, 86)
+        Me.txtDisease.Multiline = True
+        Me.txtDisease.Name = "txtDisease"
+        Me.txtDisease.Size = New System.Drawing.Size(221, 68)
+        Me.txtDisease.TabIndex = 17
         '
         'Label8
         '
@@ -247,7 +247,7 @@ Partial Class frmListPatient
         Me.txtName.Location = New System.Drawing.Point(94, 63)
         Me.txtName.Name = "txtName"
         Me.txtName.Size = New System.Drawing.Size(335, 22)
-        Me.txtName.TabIndex = 3
+        Me.txtName.TabIndex = 1
         '
         'Label2
         '
@@ -264,7 +264,8 @@ Partial Class frmListPatient
         Me.txtPatientID.Name = "txtPatientID"
         Me.txtPatientID.ReadOnly = True
         Me.txtPatientID.Size = New System.Drawing.Size(130, 22)
-        Me.txtPatientID.TabIndex = 1
+        Me.txtPatientID.TabIndex = 15
+        Me.txtPatientID.TabStop = False
         '
         'Label1
         '
@@ -335,7 +336,7 @@ Partial Class frmListPatient
     Friend WithEvents btnAdd As Button
     Friend WithEvents txtTreatment As TextBox
     Friend WithEvents Label9 As Label
-    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents txtDisease As TextBox
     Friend WithEvents Label8 As Label
     Friend WithEvents txtWeight As TextBox
     Friend WithEvents Weight As Label

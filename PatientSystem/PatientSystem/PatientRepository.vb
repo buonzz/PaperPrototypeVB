@@ -38,4 +38,34 @@ Public Class PatientRepository
         Return count
 
     End Function
+
+    Public Function edit(name As String, sex As String, birthday As String,
+                        age As Integer, weight As Double, height As Double, mdate As String, id As Integer) As Integer
+
+        Dim cn As SqlConnection = New SqlConnection(cn_builder.getConnectionString())
+        Dim count As Integer
+
+        Try
+            cn.Open()
+            Dim cmd As SqlCommand = New SqlCommand("update patients set name= @name ,sex = @sex, birthday = @birthday, age = @age, weight = @weight, height = @height, mdate = @mdate where id=@id", cn)
+            cmd.Parameters.AddWithValue("@name", name)
+            cmd.Parameters.AddWithValue("@sex", sex)
+            cmd.Parameters.AddWithValue("@birthday", birthday)
+            cmd.Parameters.AddWithValue("@age", age)
+            cmd.Parameters.AddWithValue("@weight", weight)
+            cmd.Parameters.AddWithValue("@height", height)
+            cmd.Parameters.AddWithValue("@mdate", mdate)
+            cmd.Parameters.AddWithValue("@id", id)
+
+            count = cmd.ExecuteNonQuery()
+
+        Catch ex As Exception
+            Throw ex
+        Finally
+            cn.Close()
+        End Try
+
+        Return count
+
+    End Function
 End Class
