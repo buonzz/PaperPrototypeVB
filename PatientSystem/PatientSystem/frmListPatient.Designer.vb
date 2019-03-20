@@ -90,7 +90,7 @@ Partial Class frmListPatient
         Me.btnDelete.Location = New System.Drawing.Point(887, 137)
         Me.btnDelete.Name = "btnDelete"
         Me.btnDelete.Size = New System.Drawing.Size(137, 39)
-        Me.btnDelete.TabIndex = 22
+        Me.btnDelete.TabIndex = 12
         Me.btnDelete.Text = "Delete"
         Me.btnDelete.UseVisualStyleBackColor = True
         '
@@ -99,7 +99,7 @@ Partial Class frmListPatient
         Me.btnEdit.Location = New System.Drawing.Point(887, 83)
         Me.btnEdit.Name = "btnEdit"
         Me.btnEdit.Size = New System.Drawing.Size(137, 39)
-        Me.btnEdit.TabIndex = 21
+        Me.btnEdit.TabIndex = 11
         Me.btnEdit.Text = "Edit"
         Me.btnEdit.UseVisualStyleBackColor = True
         '
@@ -108,7 +108,7 @@ Partial Class frmListPatient
         Me.btnAdd.Location = New System.Drawing.Point(887, 28)
         Me.btnAdd.Name = "btnAdd"
         Me.btnAdd.Size = New System.Drawing.Size(137, 39)
-        Me.btnAdd.TabIndex = 20
+        Me.btnAdd.TabIndex = 10
         Me.btnAdd.Text = "Add"
         Me.btnAdd.UseVisualStyleBackColor = True
         '
@@ -118,7 +118,7 @@ Partial Class frmListPatient
         Me.txtTreatment.Multiline = True
         Me.txtTreatment.Name = "txtTreatment"
         Me.txtTreatment.Size = New System.Drawing.Size(221, 68)
-        Me.txtTreatment.TabIndex = 19
+        Me.txtTreatment.TabIndex = 9
         '
         'Label9
         '
@@ -135,7 +135,7 @@ Partial Class frmListPatient
         Me.txtDisease.Multiline = True
         Me.txtDisease.Name = "txtDisease"
         Me.txtDisease.Size = New System.Drawing.Size(221, 68)
-        Me.txtDisease.TabIndex = 17
+        Me.txtDisease.TabIndex = 8
         '
         'Label8
         '
@@ -151,7 +151,7 @@ Partial Class frmListPatient
         Me.txtWeight.Location = New System.Drawing.Point(583, 50)
         Me.txtWeight.Name = "txtWeight"
         Me.txtWeight.Size = New System.Drawing.Size(100, 22)
-        Me.txtWeight.TabIndex = 15
+        Me.txtWeight.TabIndex = 7
         '
         'Weight
         '
@@ -167,7 +167,7 @@ Partial Class frmListPatient
         Me.txtHeight.Location = New System.Drawing.Point(583, 21)
         Me.txtHeight.Name = "txtHeight"
         Me.txtHeight.Size = New System.Drawing.Size(100, 22)
-        Me.txtHeight.TabIndex = 13
+        Me.txtHeight.TabIndex = 6
         '
         'Label7
         '
@@ -192,7 +192,7 @@ Partial Class frmListPatient
         Me.txtAge.Location = New System.Drawing.Point(94, 159)
         Me.txtAge.Name = "txtAge"
         Me.txtAge.Size = New System.Drawing.Size(100, 22)
-        Me.txtAge.TabIndex = 9
+        Me.txtAge.TabIndex = 4
         '
         'Label5
         '
@@ -294,21 +294,21 @@ Partial Class frmListPatient
         Me.cbSex.Location = New System.Drawing.Point(94, 94)
         Me.cbSex.Name = "cbSex"
         Me.cbSex.Size = New System.Drawing.Size(121, 24)
-        Me.cbSex.TabIndex = 23
+        Me.cbSex.TabIndex = 2
         '
         'dtpBirthday
         '
         Me.dtpBirthday.Location = New System.Drawing.Point(94, 125)
         Me.dtpBirthday.Name = "dtpBirthday"
         Me.dtpBirthday.Size = New System.Drawing.Size(200, 22)
-        Me.dtpBirthday.TabIndex = 24
+        Me.dtpBirthday.TabIndex = 3
         '
         'dtpDate
         '
         Me.dtpDate.Location = New System.Drawing.Point(94, 194)
         Me.dtpDate.Name = "dtpDate"
         Me.dtpDate.Size = New System.Drawing.Size(200, 22)
-        Me.dtpDate.TabIndex = 25
+        Me.dtpDate.TabIndex = 5
         '
         'frmListPatient
         '

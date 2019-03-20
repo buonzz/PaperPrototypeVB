@@ -94,6 +94,7 @@ Public Class frmListPatient
         dtpDate.Text = ""
         txtTreatment.Text = ""
         txtDisease.Text = ""
+        txtName.Select()
     End Sub
 
     Private Sub btnDone_Click(sender As Object, e As EventArgs) Handles btnDone.Click
