@@ -17,8 +17,14 @@ Public Class frmListPatient
         patientTable = New DataTable()
         patientTableBindingSource = New BindingSource
         patientRepo = New PatientRepository
+
         btnEdit.Enabled = False
         btnDelete.Enabled = False
+        dtpBirthday.Format = DateTimePickerFormat.Custom
+        dtpBirthday.CustomFormat = "MM/dd/yyyy"
+
+        dtpDate.Format = DateTimePickerFormat.Custom
+        dtpDate.CustomFormat = "MM/dd/yyyy"
 
         dgvPatients.DataSource = patientTableBindingSource
         PopulatePatientsTable()
@@ -58,11 +64,11 @@ Public Class frmListPatient
 
             Dim result = patientRepo.add(txtName.Text,
                         cbSex.Text,
-                        txtBirthday.Text,
+                        dtpBirthday.Text,
                         Convert.ToInt32(txtAge.Text),
                         Convert.ToDecimal(txtWeight.Text),
                         Convert.ToDecimal(txtHeight.Text),
-                        txtDate.Text
+                        dtpDate.Text
                         )
 
 
@@ -81,11 +87,11 @@ Public Class frmListPatient
     Private Sub resetForm()
         txtName.Text = ""
         cbSex.SelectedIndex = 0
-        txtBirthday.Text = ""
+        dtpBirthday.Text = ""
         txtAge.Text = ""
         txtWeight.Text = ""
         txtHeight.Text = ""
-        txtDate.Text = ""
+        dtpDate.Text = ""
         txtTreatment.Text = ""
         txtDisease.Text = ""
     End Sub
@@ -105,11 +111,11 @@ Public Class frmListPatient
             txtPatientID.Text = dgvPatients.Rows(curIndex).Cells(0).Value.ToString()
             txtName.Text = dgvPatients.Rows(curIndex).Cells(1).Value.ToString()
             cbSex.Text = dgvPatients.Rows(curIndex).Cells(2).Value.ToString()
-            txtBirthday.Text = dgvPatients.Rows(curIndex).Cells(3).Value.ToString()
+            dtpBirthday.Value = DateParser.parse(dgvPatients.Rows(curIndex).Cells(3).Value.ToString())
             txtAge.Text = dgvPatients.Rows(curIndex).Cells(4).Value.ToString()
             txtWeight.Text = dgvPatients.Rows(curIndex).Cells(5).Value.ToString()
             txtHeight.Text = dgvPatients.Rows(curIndex).Cells(6).Value.ToString()
-            txtDate.Text = dgvPatients.Rows(curIndex).Cells(7).Value.ToString()
+            dtpDate.Value = DateParser.parse(dgvPatients.Rows(curIndex).Cells(7).Value.ToString())
 
             btnEdit.Enabled = True
             ScreenMode = "Edit"

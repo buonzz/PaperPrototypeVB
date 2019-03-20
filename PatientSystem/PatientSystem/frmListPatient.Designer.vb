@@ -34,11 +34,9 @@ Partial Class frmListPatient
         Me.Weight = New System.Windows.Forms.Label()
         Me.txtHeight = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.txtDate = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.txtAge = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.txtBirthday = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.txtName = New System.Windows.Forms.TextBox()
@@ -49,12 +47,16 @@ Partial Class frmListPatient
         Me.btnDone = New System.Windows.Forms.Button()
         Me.lblMsg = New System.Windows.Forms.Label()
         Me.cbSex = New System.Windows.Forms.ComboBox()
+        Me.dtpBirthday = New System.Windows.Forms.DateTimePicker()
+        Me.dtpDate = New System.Windows.Forms.DateTimePicker()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dgvPatients, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.dtpDate)
+        Me.GroupBox1.Controls.Add(Me.dtpBirthday)
         Me.GroupBox1.Controls.Add(Me.cbSex)
         Me.GroupBox1.Controls.Add(Me.btnDelete)
         Me.GroupBox1.Controls.Add(Me.btnEdit)
@@ -67,11 +69,9 @@ Partial Class frmListPatient
         Me.GroupBox1.Controls.Add(Me.Weight)
         Me.GroupBox1.Controls.Add(Me.txtHeight)
         Me.GroupBox1.Controls.Add(Me.Label7)
-        Me.GroupBox1.Controls.Add(Me.txtDate)
         Me.GroupBox1.Controls.Add(Me.Label6)
         Me.GroupBox1.Controls.Add(Me.txtAge)
         Me.GroupBox1.Controls.Add(Me.Label5)
-        Me.GroupBox1.Controls.Add(Me.txtBirthday)
         Me.GroupBox1.Controls.Add(Me.Label4)
         Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Controls.Add(Me.txtName)
@@ -114,7 +114,7 @@ Partial Class frmListPatient
         '
         'txtTreatment
         '
-        Me.txtTreatment.Location = New System.Drawing.Point(566, 177)
+        Me.txtTreatment.Location = New System.Drawing.Point(582, 177)
         Me.txtTreatment.Multiline = True
         Me.txtTreatment.Name = "txtTreatment"
         Me.txtTreatment.Size = New System.Drawing.Size(221, 68)
@@ -131,7 +131,7 @@ Partial Class frmListPatient
         '
         'txtDisease
         '
-        Me.txtDisease.Location = New System.Drawing.Point(566, 86)
+        Me.txtDisease.Location = New System.Drawing.Point(582, 86)
         Me.txtDisease.Multiline = True
         Me.txtDisease.Name = "txtDisease"
         Me.txtDisease.Size = New System.Drawing.Size(221, 68)
@@ -148,7 +148,7 @@ Partial Class frmListPatient
         '
         'txtWeight
         '
-        Me.txtWeight.Location = New System.Drawing.Point(567, 50)
+        Me.txtWeight.Location = New System.Drawing.Point(583, 50)
         Me.txtWeight.Name = "txtWeight"
         Me.txtWeight.Size = New System.Drawing.Size(100, 22)
         Me.txtWeight.TabIndex = 15
@@ -158,13 +158,13 @@ Partial Class frmListPatient
         Me.Weight.AutoSize = True
         Me.Weight.Location = New System.Drawing.Point(491, 52)
         Me.Weight.Name = "Weight"
-        Me.Weight.Size = New System.Drawing.Size(52, 17)
+        Me.Weight.Size = New System.Drawing.Size(81, 17)
         Me.Weight.TabIndex = 14
-        Me.Weight.Text = "Weight"
+        Me.Weight.Text = "Weight (kg)"
         '
         'txtHeight
         '
-        Me.txtHeight.Location = New System.Drawing.Point(567, 21)
+        Me.txtHeight.Location = New System.Drawing.Point(583, 21)
         Me.txtHeight.Name = "txtHeight"
         Me.txtHeight.Size = New System.Drawing.Size(100, 22)
         Me.txtHeight.TabIndex = 13
@@ -174,16 +174,9 @@ Partial Class frmListPatient
         Me.Label7.AutoSize = True
         Me.Label7.Location = New System.Drawing.Point(494, 25)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(49, 17)
+        Me.Label7.Size = New System.Drawing.Size(81, 17)
         Me.Label7.TabIndex = 12
-        Me.Label7.Text = "Height"
-        '
-        'txtDate
-        '
-        Me.txtDate.Location = New System.Drawing.Point(94, 193)
-        Me.txtDate.Name = "txtDate"
-        Me.txtDate.Size = New System.Drawing.Size(100, 22)
-        Me.txtDate.TabIndex = 11
+        Me.Label7.Text = "Height (cm)"
         '
         'Label6
         '
@@ -209,13 +202,6 @@ Partial Class frmListPatient
         Me.Label5.Size = New System.Drawing.Size(33, 17)
         Me.Label5.TabIndex = 8
         Me.Label5.Text = "Age"
-        '
-        'txtBirthday
-        '
-        Me.txtBirthday.Location = New System.Drawing.Point(94, 130)
-        Me.txtBirthday.Name = "txtBirthday"
-        Me.txtBirthday.Size = New System.Drawing.Size(100, 22)
-        Me.txtBirthday.TabIndex = 7
         '
         'Label4
         '
@@ -310,6 +296,20 @@ Partial Class frmListPatient
         Me.cbSex.Size = New System.Drawing.Size(121, 24)
         Me.cbSex.TabIndex = 23
         '
+        'dtpBirthday
+        '
+        Me.dtpBirthday.Location = New System.Drawing.Point(94, 125)
+        Me.dtpBirthday.Name = "dtpBirthday"
+        Me.dtpBirthday.Size = New System.Drawing.Size(200, 22)
+        Me.dtpBirthday.TabIndex = 24
+        '
+        'dtpDate
+        '
+        Me.dtpDate.Location = New System.Drawing.Point(94, 194)
+        Me.dtpDate.Name = "dtpDate"
+        Me.dtpDate.Size = New System.Drawing.Size(200, 22)
+        Me.dtpDate.TabIndex = 25
+        '
         'frmListPatient
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -344,11 +344,9 @@ Partial Class frmListPatient
     Friend WithEvents Weight As Label
     Friend WithEvents txtHeight As TextBox
     Friend WithEvents Label7 As Label
-    Friend WithEvents txtDate As TextBox
     Friend WithEvents Label6 As Label
     Friend WithEvents txtAge As TextBox
     Friend WithEvents Label5 As Label
-    Friend WithEvents txtBirthday As TextBox
     Friend WithEvents Label4 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents txtName As TextBox
@@ -357,4 +355,6 @@ Partial Class frmListPatient
     Friend WithEvents Label1 As Label
     Friend WithEvents lblMsg As Label
     Friend WithEvents cbSex As ComboBox
+    Friend WithEvents dtpDate As DateTimePicker
+    Friend WithEvents dtpBirthday As DateTimePicker
 End Class
