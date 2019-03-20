@@ -57,7 +57,7 @@ Public Class frmListPatient
         Try
 
             Dim result = patientRepo.add(txtName.Text,
-                        txtSex.Text,
+                        cbSex.Text,
                         txtBirthday.Text,
                         Convert.ToInt32(txtAge.Text),
                         Convert.ToDecimal(txtWeight.Text),
@@ -80,7 +80,7 @@ Public Class frmListPatient
 
     Private Sub resetForm()
         txtName.Text = ""
-        txtSex.Text = ""
+        cbSex.SelectedIndex = 0
         txtBirthday.Text = ""
         txtAge.Text = ""
         txtWeight.Text = ""
@@ -104,7 +104,7 @@ Public Class frmListPatient
 
             txtPatientID.Text = dgvPatients.Rows(curIndex).Cells(0).Value.ToString()
             txtName.Text = dgvPatients.Rows(curIndex).Cells(1).Value.ToString()
-            txtSex.Text = dgvPatients.Rows(curIndex).Cells(2).Value.ToString()
+            cbSex.Text = dgvPatients.Rows(curIndex).Cells(2).Value.ToString()
             txtBirthday.Text = dgvPatients.Rows(curIndex).Cells(3).Value.ToString()
             txtAge.Text = dgvPatients.Rows(curIndex).Cells(4).Value.ToString()
             txtWeight.Text = dgvPatients.Rows(curIndex).Cells(5).Value.ToString()

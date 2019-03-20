@@ -40,7 +40,6 @@ Partial Class frmListPatient
         Me.Label5 = New System.Windows.Forms.Label()
         Me.txtBirthday = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.txtSex = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.txtName = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -49,12 +48,14 @@ Partial Class frmListPatient
         Me.dgvPatients = New System.Windows.Forms.DataGridView()
         Me.btnDone = New System.Windows.Forms.Button()
         Me.lblMsg = New System.Windows.Forms.Label()
+        Me.cbSex = New System.Windows.Forms.ComboBox()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dgvPatients, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.cbSex)
         Me.GroupBox1.Controls.Add(Me.btnDelete)
         Me.GroupBox1.Controls.Add(Me.btnEdit)
         Me.GroupBox1.Controls.Add(Me.btnAdd)
@@ -72,7 +73,6 @@ Partial Class frmListPatient
         Me.GroupBox1.Controls.Add(Me.Label5)
         Me.GroupBox1.Controls.Add(Me.txtBirthday)
         Me.GroupBox1.Controls.Add(Me.Label4)
-        Me.GroupBox1.Controls.Add(Me.txtSex)
         Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Controls.Add(Me.txtName)
         Me.GroupBox1.Controls.Add(Me.Label2)
@@ -226,13 +226,6 @@ Partial Class frmListPatient
         Me.Label4.TabIndex = 6
         Me.Label4.Text = "Birthday"
         '
-        'txtSex
-        '
-        Me.txtSex.Location = New System.Drawing.Point(94, 99)
-        Me.txtSex.Name = "txtSex"
-        Me.txtSex.Size = New System.Drawing.Size(100, 22)
-        Me.txtSex.TabIndex = 5
-        '
         'Label3
         '
         Me.Label3.AutoSize = True
@@ -308,6 +301,15 @@ Partial Class frmListPatient
         Me.lblMsg.Size = New System.Drawing.Size(0, 17)
         Me.lblMsg.TabIndex = 3
         '
+        'cbSex
+        '
+        Me.cbSex.FormattingEnabled = True
+        Me.cbSex.Items.AddRange(New Object() {"Select One", "Female", "Male"})
+        Me.cbSex.Location = New System.Drawing.Point(94, 94)
+        Me.cbSex.Name = "cbSex"
+        Me.cbSex.Size = New System.Drawing.Size(121, 24)
+        Me.cbSex.TabIndex = 23
+        '
         'frmListPatient
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -348,11 +350,11 @@ Partial Class frmListPatient
     Friend WithEvents Label5 As Label
     Friend WithEvents txtBirthday As TextBox
     Friend WithEvents Label4 As Label
-    Friend WithEvents txtSex As TextBox
     Friend WithEvents Label3 As Label
     Friend WithEvents txtName As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents txtPatientID As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents lblMsg As Label
+    Friend WithEvents cbSex As ComboBox
 End Class
