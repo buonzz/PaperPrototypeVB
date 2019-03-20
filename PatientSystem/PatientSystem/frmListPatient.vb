@@ -60,15 +60,17 @@ Public Class frmListPatient
 
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
 
-        Try
+        'Try
 
-            Dim result = patientRepo.add(txtName.Text,
+        Dim result = patientRepo.add(txtName.Text,
                         cbSex.Text,
                         dtpBirthday.Text,
                         Convert.ToInt32(txtAge.Text),
                         Convert.ToDecimal(txtWeight.Text),
                         Convert.ToDecimal(txtHeight.Text),
-                        dtpDate.Text
+                        dtpDate.Text,
+                        txtDisease.Text,
+                        txtTreatment.Text
                         )
 
 
@@ -78,9 +80,9 @@ Public Class frmListPatient
                 lblMsg.Text = "Could not add patient!"
             End If
             resetForm()
-        Catch ex As Exception
-            lblMsg.Text = "Error --> " + ex.Message
-        End Try
+        'Catch ex As Exception
+        'lblMsg.Text = "Error --> " + ex.Message
+        'End Try
         PopulatePatientsTable()
     End Sub
 

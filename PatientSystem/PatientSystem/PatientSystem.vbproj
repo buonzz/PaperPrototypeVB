@@ -73,6 +73,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CheckupRepository.vb" />
     <Compile Include="ConnectionStringBuilder.vb" />
     <Compile Include="DateParser.vb" />
     <Compile Include="frmHistory.Designer.vb">
@@ -106,6 +107,7 @@
       <DependentUpon>frmMenu.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="HistoryRepository.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>

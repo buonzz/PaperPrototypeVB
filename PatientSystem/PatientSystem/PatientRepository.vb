@@ -11,14 +11,17 @@ Public Class PatientRepository
     End Sub
 
     Public Function add(name As String, sex As String, birthday As String,
-                        age As Integer, weight As Double, height As Double, mdate As String) As Integer
+                        age As Integer, weight As Double, height As Double,
+                        mdate As String, txtDisease As String, txtTreatment As String) As Integer
 
         Dim cn As SqlConnection = New SqlConnection(cn_builder.getConnectionString())
-        Dim count As Integer
+        Dim patient_added As Integer
+        Dim new_patient_id As Integer
+
 
         Try
             cn.Open()
-            Dim cmd As SqlCommand = New SqlCommand("insert into patients(name,sex,birthday,age,weight,height,mdate) values(@name,@sex,@birthday,@age,@weight,@height,@mdate)", cn)
+            Dim cmd As SqlCommand = New SqlCommand("insert into patients(name,sex,birthday,age,weight,height,mdate) values(@name,@sex,@birthday,@age,@weight,@height,@mdate);SELECT CAST(scope_identity() AS int)", cn)
             cmd.Parameters.AddWithValue("@name", name)
             cmd.Parameters.AddWithValue("@sex", sex)
             cmd.Parameters.AddWithValue("@birthday", birthday)
@@ -27,15 +30,24 @@ Public Class PatientRepository
             cmd.Parameters.AddWithValue("@height", height)
             cmd.Parameters.AddWithValue("@mdate", mdate)
 
-            count = cmd.ExecuteNonQuery()
+            patient_added = cmd.ExecuteNonQuery()
+            new_patient_id = Convert.ToInt32(cmd.ExecuteScalar())
 
+            ' if the patient is added, then enter new entries to the checkup repo
+            If patient_added = 1 Then
+                Dim checkupRepo As CheckupRepository = New CheckupRepository()
+                Dim historyRepo As HistoryRepository = New HistoryRepository()
+
+                checkupRepo.add(new_patient_id, mdate)
+
+            End If
         Catch ex As Exception
             Throw ex
         Finally
             cn.Close()
         End Try
 
-        Return count
+        Return patient_added
 
     End Function
 
