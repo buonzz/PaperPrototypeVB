@@ -16,7 +16,7 @@ Public Class PatientRepository
 
         Dim cn As SqlConnection = New SqlConnection(cn_builder.getConnectionString())
         Dim patient_added As Integer
-        Dim new_patient_id As Integer
+        Dim new_patient_id As Integer = 0
 
 
         Try
@@ -30,8 +30,11 @@ Public Class PatientRepository
             cmd.Parameters.AddWithValue("@height", height)
             cmd.Parameters.AddWithValue("@mdate", mdate)
 
-            patient_added = cmd.ExecuteNonQuery()
             new_patient_id = Convert.ToInt32(cmd.ExecuteScalar())
+
+            If new_patient_id > 0 Then
+                patient_added = 1
+            End If
 
             ' if the patient is added, then enter new entries to the checkup repo
             If patient_added = 1 Then

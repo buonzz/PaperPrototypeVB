@@ -289,8 +289,9 @@ Partial Class frmListPatient
         '
         'cbSex
         '
+        Me.cbSex.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbSex.FormattingEnabled = True
-        Me.cbSex.Items.AddRange(New Object() {"Select One", "Female", "Male"})
+        Me.cbSex.Items.AddRange(New Object() {"Female", "Male"})
         Me.cbSex.Location = New System.Drawing.Point(94, 94)
         Me.cbSex.Name = "cbSex"
         Me.cbSex.Size = New System.Drawing.Size(121, 24)
