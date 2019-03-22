@@ -6,10 +6,13 @@ Public Class frmListPatient
     Dim patientRepo As PatientRepository
     Dim ScreenMode As String = "Add"
     Dim patientsDataset As DataSet
+    Dim patientTableBindingSource As BindingSource
 
     Private Sub frmListPatient_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         patientRepo = New PatientRepository
+        patientTableBindingSource = New BindingSource
+        dgvPatients.DataSource = patientTableBindingSource
 
         btnEdit.Enabled = False
         btnDelete.Enabled = False
@@ -22,8 +25,8 @@ Public Class frmListPatient
     End Sub
 
     Private Sub populatePatientsTable()
-        patientRepo.all(patientsDataset)
-        dgvPatients.DataSource = patientsDataset.Tables(0)
+        patientsDataset = patientRepo.all()
+        patientTableBindingSource.DataSource = patientsDataset.Tables(0)
     End Sub
 
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click

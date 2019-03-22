@@ -15,9 +15,11 @@ Public Class PatientRepository
         cn.ConnectionString = cn_builder.getConnectionString()
     End Sub
 
-    Public Sub all(ds As DataSet)
+    Public Function all() As DataSet
+
         Dim da As OleDb.OleDbDataAdapter
         Dim sqlstring As String
+        Dim ds As DataSet = New DataSet
 
         cn.Open()
         sqlstring = "SELECT * FROM patients order by id desc"
@@ -25,7 +27,9 @@ Public Class PatientRepository
 
         da.Fill(ds, "patientsystem")
         cn.Close()
-    End Sub
+
+        Return ds
+    End Function
 
     Public Function add(name As String, sex As String, birthday As String,
                         age As Integer, weight As Double, height As Double,
