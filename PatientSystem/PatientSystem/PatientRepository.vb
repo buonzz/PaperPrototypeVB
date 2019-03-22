@@ -7,11 +7,24 @@ Public Class PatientRepository
 
     Dim cn_builder As ConnectionStringBuilder
     Dim cn As OleDb.OleDbConnection
+    Dim patientsDataset As DataSet
 
     Public Sub New()
         cn_builder = New ConnectionStringBuilder
         cn = New OleDbConnection
         cn.ConnectionString = cn_builder.getConnectionString()
+    End Sub
+
+    Public Sub all(ds As DataSet)
+        Dim da As OleDb.OleDbDataAdapter
+        Dim sqlstring As String
+
+        cn.Open()
+        sqlstring = "SELECT * FROM patients order by id desc"
+        da = New OleDb.OleDbDataAdapter(sqlstring, cn)
+
+        da.Fill(ds, "patientsystem")
+        cn.Close()
     End Sub
 
     Public Function add(name As String, sex As String, birthday As String,
@@ -22,9 +35,9 @@ Public Class PatientRepository
         Dim new_patient_id As Integer = 0
 
 
-        Try
-            cn.Open()
-            Dim cmd As OleDbCommand = New OleDbCommand("insert into patients(name,sex,birthday,age,weight,height,mdate) values(@name,@sex,@birthday,@age,@weight,@height,@mdate);SELECT CAST(scope_identity() AS int)", cn)
+        'Try
+        cn.Open()
+            Dim cmd As OleDbCommand = New OleDbCommand("insert into patients(name,sex,birthday,age,weight,height,mdate) values(@name,@sex,@birthday,@age,@weight,@height,@mdate)", cn)
             cmd.Parameters.AddWithValue("@name", name)
             cmd.Parameters.AddWithValue("@sex", sex)
             cmd.Parameters.AddWithValue("@birthday", birthday)
@@ -33,9 +46,9 @@ Public Class PatientRepository
             cmd.Parameters.AddWithValue("@height", height)
             cmd.Parameters.AddWithValue("@mdate", mdate)
 
-            new_patient_id = Convert.ToInt32(cmd.ExecuteScalar())
+        new_patient_id = Convert.ToInt32(cmd.ExecuteNonQuery())
 
-            If new_patient_id > 0 Then
+        If new_patient_id > 0 Then
                 patient_added = 1
             End If
 
@@ -47,11 +60,11 @@ Public Class PatientRepository
                 ' checkupRepo.add(new_patient_id, mdate)
 
             End If
-        Catch ex As Exception
-            Throw ex
-        Finally
-            cn.Close()
-        End Try
+        'Catch ex As Exception
+        'Throw ex
+        'Finally
+        cn.Close()
+        'End Try
 
         Return patient_added
 

@@ -1,21 +1,14 @@
 ﻿Option Strict On
 Option Explicit On
 
-Imports System.Data.SqlClient
-
 Public Class frmListPatient
 
-    Dim patientDataAdapter As SqlDataAdapter = Nothing
-    Dim patientTable As DataTable = Nothing
-    Dim patientTableBindingSource As BindingSource = Nothing
-    Dim cn_builder As ConnectionStringBuilder
     Dim patientRepo As PatientRepository
     Dim ScreenMode As String = "Add"
+    Dim patientsDataset As DataSet
 
     Private Sub frmListPatient_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        cn_builder = New ConnectionStringBuilder
-        patientTable = New DataTable()
-        patientTableBindingSource = New BindingSource
+
         patientRepo = New PatientRepository
 
         btnEdit.Enabled = False
@@ -26,36 +19,11 @@ Public Class frmListPatient
         dtpDate.Format = DateTimePickerFormat.Custom
         dtpDate.CustomFormat = "MM/dd/yyyy"
 
-        dgvPatients.DataSource = patientTableBindingSource
-        PopulatePatientsTable()
     End Sub
 
-    ''' <summary>
-    ''' Fills a DataTable with data from table [patients] and binds it to
-    ''' the DataGridView column.
-    ''' </summary>
-    ''' <remarks></remarks>
-    Private Sub PopulatePatientsTable()
-
-        'Creates the ConnectionString. In production this would more likely come from App.config
-        Dim conxnString As String = cn_builder.getConnectionString()
-
-        'The SQL command that gets the data. In production this would more likely be a 
-        'stored procedure or Entity data model.
-        Dim cmdString As String = "SELECT [id], [name], [sex], [birthday], [age], [weight], [height], [mdate] FROM [patients];"
-
-        'Typical connection, command, adapter pattern within 'Using' blocks to properly Dispose
-        'the resources when done.
-        Using conxn As New SqlConnection(conxnString)
-            Using cmd As New SqlCommand(cmdString, conxn)
-                Using sda As New SqlDataAdapter(cmd)
-                    patientTable.Clear()
-                    sda.Fill(patientTable)
-                    patientTableBindingSource.DataSource = patientTable
-                End Using
-            End Using
-        End Using
-
+    Private Sub populatePatientsTable()
+        patientRepo.all(patientsDataset)
+        dgvPatients.DataSource = patientsDataset.Tables(0)
     End Sub
 
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
@@ -83,7 +51,6 @@ Public Class frmListPatient
         'Catch ex As Exception
         'lblMsg.Text = "Error --> " + ex.Message
         'End Try
-        PopulatePatientsTable()
     End Sub
 
     Private Sub resetForm()
