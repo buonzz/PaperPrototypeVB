@@ -1,14 +1,6 @@
-﻿Imports System.Data.SqlClient
-
-Public Class ConnectionStringBuilder
+﻿Public Class ConnectionStringBuilder
     Public Function getConnectionString() As String
-
-        'An often overlooked gem, SqlConnectionStringBuilder simplifies creating a connection
-        Dim csb As SqlConnectionStringBuilder = New SqlConnectionStringBuilder()
-        csb.DataSource = ".\SQLEXPRESS"
-        csb.InitialCatalog = "PatientSystem"
-        csb.IntegratedSecurity = True
-        Return csb.ConnectionString
-
+        Dim cs As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=patientsystem.accdb"
+        Return cs
     End Function
 End Class
