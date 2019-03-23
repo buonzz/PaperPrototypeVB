@@ -39,7 +39,7 @@ Public Class PatientRepository
         Dim new_patient_id As Integer = 0
 
 
-        'Try
+
         cn.Open()
             Dim cmd As OleDbCommand = New OleDbCommand("insert into patients(name,sex,birthday,age,weight,height,mdate) values(@name,@sex,@birthday,@age,@weight,@height,@mdate)", cn)
             cmd.Parameters.AddWithValue("@name", name)
@@ -50,22 +50,16 @@ Public Class PatientRepository
             cmd.Parameters.AddWithValue("@height", height)
             cmd.Parameters.AddWithValue("@mdate", mdate)
 
-            new_patient_id = Convert.ToInt32(cmd.ExecuteNonQuery())
+        patient_added = Convert.ToInt32(cmd.ExecuteNonQuery())
 
-            If new_patient_id > 0 Then
-                patient_added = 1
-            End If
-
-            ' if the patient is added, then enter new entries to the checkup repo
-            If patient_added = 1 Then
-                Dim checkupRepo As CheckupRepository = New CheckupRepository()
-                checkupRepo.add(new_patient_id, mdate, disease, treatment)
-            End If
-        'Catch ex As Exception
-        ' Throw ex
-        'Finally
+        If patient_added = 1 Then
+            Dim checkupRepo As CheckupRepository = New CheckupRepository()
+            Dim new_patient_id_sql = "Select @@Identity"
+            cmd.CommandText = new_patient_id_sql
+            new_patient_id = Convert.ToInt32(cmd.ExecuteScalar())
+            checkupRepo.add(new_patient_id, mdate, disease, treatment)
+        End If
         cn.Close()
-        ' End Try
 
         Return patient_added
 
