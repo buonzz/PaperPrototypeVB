@@ -33,9 +33,9 @@ Public Class frmListPatient
 
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
 
-        Try
+        'Try
 
-            Dim result = patientRepo.add(txtName.Text,
+        Dim result = patientRepo.add(txtName.Text,
                         cbSex.Text,
                         dtpBirthday.Text,
                         Convert.ToInt32(txtAge.Text),
@@ -54,9 +54,9 @@ Public Class frmListPatient
             End If
             resetForm()
             populatePatientsTable()
-        Catch ex As Exception
-            MessageBox.Show("An Error has occured" & ex.Message)
-        End Try
+        'Catch ex As Exception
+        ' MessageBox.Show("An Error has occured" & ex.Message)
+        'End Try
     End Sub
 
     Private Sub resetForm()

@@ -33,7 +33,7 @@ Public Class PatientRepository
 
     Public Function add(name As String, sex As String, birthday As String,
                         age As Integer, weight As Double, height As Double,
-                        mdate As String, txtDisease As String, txtTreatment As String) As Integer
+                        mdate As String, disease As String, treatment As String) As Integer
 
         Dim patient_added As Integer
         Dim new_patient_id As Integer = 0
@@ -50,25 +50,22 @@ Public Class PatientRepository
             cmd.Parameters.AddWithValue("@height", height)
             cmd.Parameters.AddWithValue("@mdate", mdate)
 
-        new_patient_id = Convert.ToInt32(cmd.ExecuteNonQuery())
+            new_patient_id = Convert.ToInt32(cmd.ExecuteNonQuery())
 
-        If new_patient_id > 0 Then
+            If new_patient_id > 0 Then
                 patient_added = 1
             End If
 
             ' if the patient is added, then enter new entries to the checkup repo
             If patient_added = 1 Then
-                ' Dim checkupRepo As CheckupRepository = New CheckupRepository()
-                ' Dim historyRepo As HistoryRepository = New HistoryRepository()
-
-                ' checkupRepo.add(new_patient_id, mdate)
-
+                Dim checkupRepo As CheckupRepository = New CheckupRepository()
+                checkupRepo.add(new_patient_id, mdate, disease, treatment)
             End If
         'Catch ex As Exception
-        'Throw ex
+        ' Throw ex
         'Finally
         cn.Close()
-        'End Try
+        ' End Try
 
         Return patient_added
 
