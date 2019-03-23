@@ -23,6 +23,9 @@ Partial Class frmListPatient
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.dtpDate = New System.Windows.Forms.DateTimePicker()
+        Me.dtpBirthday = New System.Windows.Forms.DateTimePicker()
+        Me.cbSex = New System.Windows.Forms.ComboBox()
         Me.btnDelete = New System.Windows.Forms.Button()
         Me.btnEdit = New System.Windows.Forms.Button()
         Me.btnAdd = New System.Windows.Forms.Button()
@@ -46,9 +49,6 @@ Partial Class frmListPatient
         Me.dgvPatients = New System.Windows.Forms.DataGridView()
         Me.btnDone = New System.Windows.Forms.Button()
         Me.lblMsg = New System.Windows.Forms.Label()
-        Me.cbSex = New System.Windows.Forms.ComboBox()
-        Me.dtpBirthday = New System.Windows.Forms.DateTimePicker()
-        Me.dtpDate = New System.Windows.Forms.DateTimePicker()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dgvPatients, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -84,6 +84,30 @@ Partial Class frmListPatient
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Patient Form"
+        '
+        'dtpDate
+        '
+        Me.dtpDate.Location = New System.Drawing.Point(94, 194)
+        Me.dtpDate.Name = "dtpDate"
+        Me.dtpDate.Size = New System.Drawing.Size(200, 22)
+        Me.dtpDate.TabIndex = 5
+        '
+        'dtpBirthday
+        '
+        Me.dtpBirthday.Location = New System.Drawing.Point(94, 125)
+        Me.dtpBirthday.Name = "dtpBirthday"
+        Me.dtpBirthday.Size = New System.Drawing.Size(200, 22)
+        Me.dtpBirthday.TabIndex = 3
+        '
+        'cbSex
+        '
+        Me.cbSex.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbSex.FormattingEnabled = True
+        Me.cbSex.Items.AddRange(New Object() {"Female", "Male"})
+        Me.cbSex.Location = New System.Drawing.Point(94, 94)
+        Me.cbSex.Name = "cbSex"
+        Me.cbSex.Size = New System.Drawing.Size(121, 24)
+        Me.cbSex.TabIndex = 2
         '
         'btnDelete
         '
@@ -287,30 +311,6 @@ Partial Class frmListPatient
         Me.lblMsg.Size = New System.Drawing.Size(0, 17)
         Me.lblMsg.TabIndex = 3
         '
-        'cbSex
-        '
-        Me.cbSex.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cbSex.FormattingEnabled = True
-        Me.cbSex.Items.AddRange(New Object() {"Female", "Male"})
-        Me.cbSex.Location = New System.Drawing.Point(94, 94)
-        Me.cbSex.Name = "cbSex"
-        Me.cbSex.Size = New System.Drawing.Size(121, 24)
-        Me.cbSex.TabIndex = 2
-        '
-        'dtpBirthday
-        '
-        Me.dtpBirthday.Location = New System.Drawing.Point(94, 125)
-        Me.dtpBirthday.Name = "dtpBirthday"
-        Me.dtpBirthday.Size = New System.Drawing.Size(200, 22)
-        Me.dtpBirthday.TabIndex = 3
-        '
-        'dtpDate
-        '
-        Me.dtpDate.Location = New System.Drawing.Point(94, 194)
-        Me.dtpDate.Name = "dtpDate"
-        Me.dtpDate.Size = New System.Drawing.Size(200, 22)
-        Me.dtpDate.TabIndex = 5
-        '
         'frmListPatient
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -320,8 +320,12 @@ Partial Class frmListPatient
         Me.Controls.Add(Me.btnDone)
         Me.Controls.Add(Me.dgvPatients)
         Me.Controls.Add(Me.GroupBox1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "frmListPatient"
         Me.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Manage Patients"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
