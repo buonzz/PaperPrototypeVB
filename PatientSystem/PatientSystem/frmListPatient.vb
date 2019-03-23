@@ -95,6 +95,8 @@ Public Class frmListPatient
             MessageBox.Show("The weight needs to be a number")
             result = 1
         End If
+
+        Return result
     End Function
 
 
