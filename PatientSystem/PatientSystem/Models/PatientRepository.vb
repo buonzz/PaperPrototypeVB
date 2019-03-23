@@ -72,7 +72,8 @@ Public Class PatientRepository
     End Function
 
     Public Function edit(name As String, sex As String, birthday As String,
-                        age As Integer, weight As Double, height As Double, mdate As String, id As Integer) As Integer
+                        age As Integer, weight As Double, height As Double,
+                        mdate As String, disease As String, treatment As String, id As Integer) As Integer
 
         Dim count As Integer
 
@@ -99,4 +100,16 @@ Public Class PatientRepository
         Return count
 
     End Function
+
+    Public Function delete(id As Integer) As Integer
+
+        Dim count As Integer
+        cn.Open()
+            Dim cmd As OleDbCommand = New OleDbCommand("delete from patients where id=@id", cn)
+            cmd.Parameters.AddWithValue("@id", id)
+        count = cmd.ExecuteNonQuery()
+        cn.Close()
+        Return count
+    End Function
+
 End Class

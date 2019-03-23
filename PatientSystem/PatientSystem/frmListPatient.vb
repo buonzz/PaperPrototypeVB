@@ -105,7 +105,30 @@ Public Class frmListPatient
     End Sub
 
     Private Sub btnEdit_Click(sender As Object, e As EventArgs) Handles btnEdit.Click
+        If (validateInput() = 1) Then
+            Exit Sub
+        End If
 
+        Dim result = patientRepo.edit(
+                        txtName.Text,
+                        cbSex.Text,
+                        dtpBirthday.Text,
+                        Convert.ToInt32(txtAge.Text),
+                        Convert.ToDecimal(txtWeight.Text),
+                        Convert.ToDecimal(txtHeight.Text),
+                        dtpDate.Text,
+                        txtDisease.Text,
+                        txtTreatment.Text,
+                        Convert.ToInt32(txtPatientID.Text)
+                     )
+
+
+        If result = 1 Then
+            lblMsg.Text = "Patient " + txtName.Text + " has been updated!"
+        Else
+            lblMsg.Text = "Could not edit patient!"
+        End If
+        populatePatientsTable()
     End Sub
 
     Private Sub dgvPatients_SelectionChanged(sender As Object, e As EventArgs) Handles dgvPatients.SelectionChanged
@@ -123,7 +146,21 @@ Public Class frmListPatient
 
             btnEdit.Enabled = True
             ScreenMode = "Edit"
+            btnDelete.Enabled = True
         End If
     End Sub
 
+    Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
+        Dim result As Integer = MessageBox.Show("Do you really want to delete this patient?", "Delete Patient Confirmation", MessageBoxButtons.YesNo)
+        If result = DialogResult.Cancel Then
+            Exit Sub
+        ElseIf result = DialogResult.No Then
+            Exit Sub
+        End If
+
+        If IsNumeric(txtPatientID.Text) Then
+            patientRepo.delete(Convert.ToInt32(txtPatientID.Text))
+            populatePatientsTable()
+        End If
+    End Sub
 End Class

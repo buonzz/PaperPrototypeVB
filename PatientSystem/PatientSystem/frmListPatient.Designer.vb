@@ -124,7 +124,7 @@ Partial Class frmListPatient
         Me.btnEdit.Name = "btnEdit"
         Me.btnEdit.Size = New System.Drawing.Size(137, 39)
         Me.btnEdit.TabIndex = 11
-        Me.btnEdit.Text = "Edit"
+        Me.btnEdit.Text = "Save Changes"
         Me.btnEdit.UseVisualStyleBackColor = True
         '
         'btnAdd
