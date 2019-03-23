@@ -31,8 +31,13 @@ Public Class frmManageCheckup
     End Sub
 
     Private Sub btnCheckHistory_Click(sender As Object, e As EventArgs) Handles btnCheckHistory.Click
-        If dgvPatients.SelectedRows.Count > 0 Then
+        Dim patientID As Integer
 
+        If dgvPatients.SelectedRows.Count > 0 Then
+            patientID = Convert.ToInt32(dgvPatients.Rows(dgvPatients.CurrentRow.Index).Cells(0).Value.ToString())
+            Dim frm As frmHistory = New frmHistory()
+            frm.PatientID = patientID
+            frm.Show()
         End If
     End Sub
 End Class

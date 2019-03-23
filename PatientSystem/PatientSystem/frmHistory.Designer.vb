@@ -22,21 +22,21 @@ Partial Class frmHistory
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.dgvCheckups = New System.Windows.Forms.DataGridView()
         Me.btnDone = New System.Windows.Forms.Button()
         Me.btnAddRecord = New System.Windows.Forms.Button()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvCheckups, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'DataGridView1
+        'dgvCheckups
         '
-        Me.DataGridView1.AllowUserToOrderColumns = True
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(12, 12)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.RowTemplate.Height = 24
-        Me.DataGridView1.Size = New System.Drawing.Size(776, 426)
-        Me.DataGridView1.TabIndex = 0
+        Me.dgvCheckups.AllowUserToOrderColumns = True
+        Me.dgvCheckups.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvCheckups.Location = New System.Drawing.Point(12, 12)
+        Me.dgvCheckups.Name = "dgvCheckups"
+        Me.dgvCheckups.RowTemplate.Height = 24
+        Me.dgvCheckups.Size = New System.Drawing.Size(776, 426)
+        Me.dgvCheckups.TabIndex = 0
         '
         'btnDone
         '
@@ -63,15 +63,15 @@ Partial Class frmHistory
         Me.ClientSize = New System.Drawing.Size(800, 495)
         Me.Controls.Add(Me.btnAddRecord)
         Me.Controls.Add(Me.btnDone)
-        Me.Controls.Add(Me.DataGridView1)
+        Me.Controls.Add(Me.dgvCheckups)
         Me.Name = "frmHistory"
         Me.Text = "History"
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvCheckups, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
 
-    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents dgvCheckups As DataGridView
     Friend WithEvents btnDone As Button
     Friend WithEvents btnAddRecord As Button
 End Class

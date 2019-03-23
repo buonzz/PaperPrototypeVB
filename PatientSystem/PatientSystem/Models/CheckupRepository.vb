@@ -55,4 +55,23 @@ Public Class CheckupRepository
 
     End Function
 
+    Public Function findByID(id As Integer, fields As String()) As DataSet
+
+        Dim da As OleDb.OleDbDataAdapter
+        Dim sqlstring As String
+        Dim ds As DataSet = New DataSet
+        Dim sqlfields As String = String.Join(",", fields)
+
+
+
+        cn.Open()
+        sqlstring = "SELECT " & sqlfields & " FROM checkups where id=" & id
+        da = New OleDb.OleDbDataAdapter(sqlstring, cn)
+
+        da.Fill(ds, "patientsystem")
+        cn.Close()
+
+        Return ds
+    End Function
+
 End Class
