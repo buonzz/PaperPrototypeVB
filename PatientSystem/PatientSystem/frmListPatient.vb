@@ -22,6 +22,10 @@ Public Class frmListPatient
         dtpDate.Format = DateTimePickerFormat.Custom
         dtpDate.CustomFormat = "MM/dd/yyyy"
 
+        If cbSex.Items.Count > 0 Then
+            cbSex.SelectedIndex = 0
+        End If
+
         populatePatientsTable()
 
     End Sub
