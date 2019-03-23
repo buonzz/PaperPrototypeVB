@@ -12,6 +12,12 @@ Public Class frmHistory
         checkupTableBindingSource = New BindingSource
         dgvCheckups.DataSource = checkupTableBindingSource
 
+        populateTable()
+    End Sub
 
+    Private Sub populateTable()
+        Dim fields() As String = {"id", "mdate", "disease", "treatment"}
+        checkupDataset = checkupRepo.findByPatientID(PatientID, fields)
+        checkupTableBindingSource.DataSource = checkupDataset.Tables(0)
     End Sub
 End Class
