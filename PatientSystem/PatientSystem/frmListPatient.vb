@@ -36,7 +36,7 @@ Public Class frmListPatient
     End Sub
 
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
-        If (validate() = 1) Then
+        If (validateInput() = 1) Then
             Exit Sub
         End If
         'Try
@@ -78,7 +78,7 @@ Public Class frmListPatient
         txtName.Select()
     End Sub
 
-    Private Function validate() As Integer
+    Private Function validateInput() As Integer
         Dim result As Integer = 0
 
         If Not IsNumeric(txtAge.Text) Then
