@@ -14,8 +14,10 @@ Public Class frmManageCheckup
     End Sub
 
     Private Sub txtPatientID_TextChanged(sender As Object, e As EventArgs) Handles txtPatientID.TextChanged
+        Dim fields() As String = {"id", "name", "mdate"}
+
         If IsNumeric(txtPatientID.Text) Then
-            patientsDataset = patientRepo.findByID(Convert.ToInt32(txtPatientID.Text))
+            patientsDataset = patientRepo.findByID(Convert.ToInt32(txtPatientID.Text), fields)
             patientTableBindingSource.DataSource = patientsDataset.Tables(0)
             If patientsDataset.Tables(0).Rows.Count = 0 Then
                 lblMessage.Text = "Patient ID not found!"
@@ -28,5 +30,9 @@ Public Class frmManageCheckup
 
     End Sub
 
+    Private Sub btnCheckHistory_Click(sender As Object, e As EventArgs) Handles btnCheckHistory.Click
+        If dgvPatients.SelectedRows.Count > 0 Then
 
+        End If
+    End Sub
 End Class

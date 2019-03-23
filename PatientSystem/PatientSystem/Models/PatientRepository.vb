@@ -113,14 +113,17 @@ Public Class PatientRepository
     End Function
 
 
-    Public Function findByID(id As Integer) As DataSet
+    Public Function findByID(id As Integer, fields As String()) As DataSet
 
         Dim da As OleDb.OleDbDataAdapter
         Dim sqlstring As String
         Dim ds As DataSet = New DataSet
+        Dim sqlfields As String = String.Join(",", fields)
+
+
 
         cn.Open()
-        sqlstring = "SELECT id, name  FROM patients where id=" & id
+        sqlstring = "SELECT " & sqlfields & " FROM patients where id=" & id
         da = New OleDb.OleDbDataAdapter(sqlstring, cn)
 
         da.Fill(ds, "patientsystem")

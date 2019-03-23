@@ -23,6 +23,8 @@ Partial Class frmHistory
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.btnDone = New System.Windows.Forms.Button()
+        Me.btnAddRecord = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -36,11 +38,31 @@ Partial Class frmHistory
         Me.DataGridView1.Size = New System.Drawing.Size(776, 426)
         Me.DataGridView1.TabIndex = 0
         '
+        'btnDone
+        '
+        Me.btnDone.Location = New System.Drawing.Point(661, 445)
+        Me.btnDone.Name = "btnDone"
+        Me.btnDone.Size = New System.Drawing.Size(127, 38)
+        Me.btnDone.TabIndex = 1
+        Me.btnDone.Text = "Done"
+        Me.btnDone.UseVisualStyleBackColor = True
+        '
+        'btnAddRecord
+        '
+        Me.btnAddRecord.Location = New System.Drawing.Point(521, 444)
+        Me.btnAddRecord.Name = "btnAddRecord"
+        Me.btnAddRecord.Size = New System.Drawing.Size(123, 38)
+        Me.btnAddRecord.TabIndex = 2
+        Me.btnAddRecord.Text = "Add Record"
+        Me.btnAddRecord.UseVisualStyleBackColor = True
+        '
         'frmHistory
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(800, 495)
+        Me.Controls.Add(Me.btnAddRecord)
+        Me.Controls.Add(Me.btnDone)
         Me.Controls.Add(Me.DataGridView1)
         Me.Name = "frmHistory"
         Me.Text = "History"
@@ -50,4 +72,6 @@ Partial Class frmHistory
     End Sub
 
     Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents btnDone As Button
+    Friend WithEvents btnAddRecord As Button
 End Class

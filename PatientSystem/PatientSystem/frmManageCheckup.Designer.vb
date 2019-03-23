@@ -26,7 +26,6 @@ Partial Class frmManageCheckup
         Me.dgvPatients = New System.Windows.Forms.DataGridView()
         Me.btnCheckHistory = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.btnNewCheckup = New System.Windows.Forms.Button()
         Me.lblMessage = New System.Windows.Forms.Label()
         CType(Me.dgvPatients, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -68,15 +67,6 @@ Partial Class frmManageCheckup
         Me.Label1.TabIndex = 3
         Me.Label1.Text = "Enter Patient ID"
         '
-        'btnNewCheckup
-        '
-        Me.btnNewCheckup.Location = New System.Drawing.Point(452, 397)
-        Me.btnNewCheckup.Name = "btnNewCheckup"
-        Me.btnNewCheckup.Size = New System.Drawing.Size(159, 41)
-        Me.btnNewCheckup.TabIndex = 4
-        Me.btnNewCheckup.Text = "New Checkup"
-        Me.btnNewCheckup.UseVisualStyleBackColor = True
-        '
         'lblMessage
         '
         Me.lblMessage.AutoSize = True
@@ -91,7 +81,6 @@ Partial Class frmManageCheckup
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
         Me.Controls.Add(Me.lblMessage)
-        Me.Controls.Add(Me.btnNewCheckup)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.btnCheckHistory)
         Me.Controls.Add(Me.dgvPatients)
@@ -108,6 +97,5 @@ Partial Class frmManageCheckup
     Friend WithEvents dgvPatients As DataGridView
     Friend WithEvents btnCheckHistory As Button
     Friend WithEvents Label1 As Label
-    Friend WithEvents btnNewCheckup As Button
     Friend WithEvents lblMessage As Label
 End Class
