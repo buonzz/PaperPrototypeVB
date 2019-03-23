@@ -36,7 +36,9 @@ Public Class frmListPatient
     End Sub
 
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
-
+        If (validate() = 1) Then
+            Exit Sub
+        End If
         'Try
 
         Dim result = patientRepo.add(txtName.Text,
@@ -75,6 +77,26 @@ Public Class frmListPatient
         txtDisease.Text = ""
         txtName.Select()
     End Sub
+
+    Private Function validate() As Integer
+        Dim result As Integer = 0
+
+        If Not IsNumeric(txtAge.Text) Then
+            MessageBox.Show("The age needs to be a number")
+            result = 1
+        End If
+
+        If Not IsNumeric(txtHeight.Text) Then
+            MessageBox.Show("The height needs to be a number")
+            result = 1
+        End If
+
+        If Not IsNumeric(txtWeight.Text) Then
+            MessageBox.Show("The weight needs to be a number")
+            result = 1
+        End If
+    End Function
+
 
     Private Sub btnDone_Click(sender As Object, e As EventArgs) Handles btnDone.Click
         Me.Close()
