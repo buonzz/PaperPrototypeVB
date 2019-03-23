@@ -112,4 +112,21 @@ Public Class PatientRepository
         Return count
     End Function
 
+
+    Public Function findByID(id As Integer) As DataSet
+
+        Dim da As OleDb.OleDbDataAdapter
+        Dim sqlstring As String
+        Dim ds As DataSet = New DataSet
+
+        cn.Open()
+        sqlstring = "SELECT id, name  FROM patients where id=" & id
+        da = New OleDb.OleDbDataAdapter(sqlstring, cn)
+
+        da.Fill(ds, "patientsystem")
+        cn.Close()
+
+        Return ds
+    End Function
+
 End Class
