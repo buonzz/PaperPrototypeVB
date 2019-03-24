@@ -30,4 +30,8 @@ Public Class frmHistory
     Private Sub btnDone_Click(sender As Object, e As EventArgs) Handles btnDone.Click
         Close()
     End Sub
+
+    Private Sub btnRefresh_Click(sender As Object, e As EventArgs) Handles btnRefresh.Click
+        populateTable()
+    End Sub
 End Class

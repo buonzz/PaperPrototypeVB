@@ -25,6 +25,7 @@ Partial Class frmHistory
         Me.dgvCheckups = New System.Windows.Forms.DataGridView()
         Me.btnDone = New System.Windows.Forms.Button()
         Me.btnAddRecord = New System.Windows.Forms.Button()
+        Me.btnRefresh = New System.Windows.Forms.Button()
         CType(Me.dgvCheckups, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -56,11 +57,21 @@ Partial Class frmHistory
         Me.btnAddRecord.Text = "Add Record"
         Me.btnAddRecord.UseVisualStyleBackColor = True
         '
+        'btnRefresh
+        '
+        Me.btnRefresh.Location = New System.Drawing.Point(399, 445)
+        Me.btnRefresh.Name = "btnRefresh"
+        Me.btnRefresh.Size = New System.Drawing.Size(116, 38)
+        Me.btnRefresh.TabIndex = 3
+        Me.btnRefresh.Text = "Refresh"
+        Me.btnRefresh.UseVisualStyleBackColor = True
+        '
         'frmHistory
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 495)
+        Me.Controls.Add(Me.btnRefresh)
         Me.Controls.Add(Me.btnAddRecord)
         Me.Controls.Add(Me.btnDone)
         Me.Controls.Add(Me.dgvCheckups)
@@ -75,4 +86,5 @@ Partial Class frmHistory
     Friend WithEvents dgvCheckups As DataGridView
     Friend WithEvents btnDone As Button
     Friend WithEvents btnAddRecord As Button
+    Friend WithEvents btnRefresh As Button
 End Class
