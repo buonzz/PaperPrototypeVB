@@ -20,4 +20,10 @@ Public Class frmHistory
         checkupDataset = checkupRepo.findByPatientID(PatientID, fields)
         checkupTableBindingSource.DataSource = checkupDataset.Tables(0)
     End Sub
+
+    Private Sub btnAddRecord_Click(sender As Object, e As EventArgs) Handles btnAddRecord.Click
+        Dim frm As frmNewCheckUp = New frmNewCheckUp()
+        frm.PatientID = PatientID
+        frm.Show()
+    End Sub
 End Class

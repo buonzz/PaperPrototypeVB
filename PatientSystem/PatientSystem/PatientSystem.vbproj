@@ -104,6 +104,12 @@
       <DependentUpon>frmMenu.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmNewCheckUp.Designer.vb">
+      <DependentUpon>frmNewCheckUp.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmNewCheckUp.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Models\CheckupRepository.vb" />
     <Compile Include="Models\PatientRepository.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -139,6 +145,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMenu.resx">
       <DependentUpon>frmMenu.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNewCheckUp.resx">
+      <DependentUpon>frmNewCheckUp.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
