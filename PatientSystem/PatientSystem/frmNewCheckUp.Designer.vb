@@ -25,7 +25,7 @@ Partial Class frmNewCheckUp
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtPatient = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.txtDisease = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.txtTreatment = New System.Windows.Forms.TextBox()
         Me.btnSave = New System.Windows.Forms.Button()
@@ -59,13 +59,13 @@ Partial Class frmNewCheckUp
         Me.Label2.TabIndex = 2
         Me.Label2.Text = "Disease"
         '
-        'TextBox1
+        'txtDisease
         '
-        Me.TextBox1.Location = New System.Drawing.Point(176, 84)
-        Me.TextBox1.Multiline = True
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(596, 181)
-        Me.TextBox1.TabIndex = 3
+        Me.txtDisease.Location = New System.Drawing.Point(176, 84)
+        Me.txtDisease.Multiline = True
+        Me.txtDisease.Name = "txtDisease"
+        Me.txtDisease.Size = New System.Drawing.Size(596, 181)
+        Me.txtDisease.TabIndex = 3
         '
         'Label3
         '
@@ -101,7 +101,7 @@ Partial Class frmNewCheckUp
         Me.Controls.Add(Me.btnSave)
         Me.Controls.Add(Me.txtTreatment)
         Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.txtDisease)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.txtPatient)
         Me.Controls.Add(Me.Label1)
@@ -115,7 +115,7 @@ Partial Class frmNewCheckUp
     Friend WithEvents Label1 As Label
     Friend WithEvents txtPatient As TextBox
     Friend WithEvents Label2 As Label
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents txtDisease As TextBox
     Friend WithEvents Label3 As Label
     Friend WithEvents txtTreatment As TextBox
     Friend WithEvents btnSave As Button
