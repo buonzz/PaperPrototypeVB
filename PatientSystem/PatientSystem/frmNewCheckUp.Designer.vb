@@ -106,6 +106,7 @@ Partial Class frmNewCheckUp
         Me.Controls.Add(Me.txtPatient)
         Me.Controls.Add(Me.Label1)
         Me.Name = "frmNewCheckUp"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "New Check Up"
         Me.ResumeLayout(False)
         Me.PerformLayout()

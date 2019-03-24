@@ -86,6 +86,7 @@ Partial Class frmManageCheckup
         Me.Controls.Add(Me.dgvPatients)
         Me.Controls.Add(Me.txtPatientID)
         Me.Name = "frmManageCheckup"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Manage Checkup"
         CType(Me.dgvPatients, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

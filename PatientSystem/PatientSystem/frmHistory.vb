@@ -26,4 +26,8 @@ Public Class frmHistory
         frm.PatientID = PatientID
         frm.Show()
     End Sub
+
+    Private Sub btnDone_Click(sender As Object, e As EventArgs) Handles btnDone.Click
+        Close()
+    End Sub
 End Class

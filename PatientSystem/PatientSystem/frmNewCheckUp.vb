@@ -28,5 +28,6 @@ Public Class frmNewCheckUp
         Dim regDate As Date = Date.Now()
         Dim strDate As String = regDate.ToString("MM\/dd\/yyyy")
         checkupRepo.add(PatientID, strDate, txtDisease.Text, txtTreatment.Text)
+        Close()
     End Sub
 End Class

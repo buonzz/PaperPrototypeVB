@@ -65,6 +65,7 @@ Partial Class frmHistory
         Me.Controls.Add(Me.btnDone)
         Me.Controls.Add(Me.dgvCheckups)
         Me.Name = "frmHistory"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "History"
         CType(Me.dgvCheckups, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
