@@ -31,7 +31,8 @@ Partial Class frmHistory
         '
         'dgvCheckups
         '
-        Me.dgvCheckups.AllowUserToOrderColumns = True
+        Me.dgvCheckups.AllowUserToAddRows = False
+        Me.dgvCheckups.AllowUserToDeleteRows = False
         Me.dgvCheckups.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvCheckups.Location = New System.Drawing.Point(12, 12)
         Me.dgvCheckups.Name = "dgvCheckups"
