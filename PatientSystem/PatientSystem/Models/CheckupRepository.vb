@@ -34,22 +34,18 @@ Public Class CheckupRepository
     Public Function add(patient_id As Integer, mdate As String, disease As String, treatment As String) As Integer
 
         Dim count As Integer
+        Dim sqlstring As String
 
-        ' Try
+        sqlstring = "insert into checkups(patient_id,mdate, disease,treatment) 
+                    values(" & patient_id & ",'" & mdate & "','" & disease & "','" & treatment & "')"
+
+        'MessageBox.Show(sqlstring)
+
+
         cn.Open()
-            Dim cmd As OleDbCommand = New OleDbCommand("insert into checkups(patient_id,mdate, disease,treatment) values(@patient_id,@mdate, @disease, @treatment)", cn)
-            cmd.Parameters.AddWithValue("@patient_id", patient_id)
-            cmd.Parameters.AddWithValue("@disease", disease)
-            cmd.Parameters.AddWithValue("@treatment", treatment)
-            cmd.Parameters.AddWithValue("@mdate", mdate)
-
-            count = cmd.ExecuteNonQuery()
-
-        ' Catch ex As Exception
-        'Throw ex
-        ' Finally
+        Dim cmd As OleDbCommand = New OleDbCommand(sqlstring, cn)
+        count = cmd.ExecuteNonQuery()
         cn.Close()
-        ' End Try
 
         Return count
 

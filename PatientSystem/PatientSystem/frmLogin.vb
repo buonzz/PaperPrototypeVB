@@ -3,7 +3,7 @@
 
     Public Sub New()
 
-        ' This call is required by the designer.
+
         InitializeComponent()
 
         userRepository = New UserRepository()

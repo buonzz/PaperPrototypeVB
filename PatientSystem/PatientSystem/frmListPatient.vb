@@ -39,7 +39,7 @@ Public Class frmListPatient
         If (validateInput() = 1) Then
             Exit Sub
         End If
-        'Try
+
 
         Dim result = patientRepo.add(txtName.Text,
                         cbSex.Text,
@@ -60,9 +60,7 @@ Public Class frmListPatient
             End If
             resetForm()
             populatePatientsTable()
-        'Catch ex As Exception
-        ' MessageBox.Show("An Error has occured" & ex.Message)
-        'End Try
+
     End Sub
 
     Private Sub resetForm()
